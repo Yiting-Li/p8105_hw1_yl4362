@@ -32,3 +32,14 @@ mean(pull(prob1_df, char_vec))
 mean(pull(prob1_df, factor_vec))
 ```
 It works for numeric and logical vector because logical vector will be automatically regarded as numeric (0,1). But it does not work for character and factor.
+
+**Apply `{r as.numeric}` to variables**
+```{r, eval = FALSE}
+as.numeric(pull(prob1_df, samp))
+as.numeric(pull(prob1_df, samp_gt_0))
+as.numeric(pull(prob1_df, char_vec))
+as.numeric(pull(prob1_df, factor_vec))
+```
+After applying `{r as.numeric}`, results of 'samp', 'samp_gt_0', and 'factor_vec' were successfully converted to numeric values because factor vector is used to refer to a qualitative relationship.  But it does not work for character vector because they are combinations of letters.
+
+It partly explains the results of take the mean attempt, becasue it shows 'samp' can 'samp_gt_0' can be converted to numeric values.
