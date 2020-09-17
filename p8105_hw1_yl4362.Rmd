@@ -1,0 +1,25 @@
+---
+title: "p8105_hw1_yl4362"
+author: "Yiting Li"
+date: "9/17/2020"
+output: github_document
+---
+
+This is the hw1 of yl4362! 
+
+```{r}
+library(tidyverse)
+```
+
+# Problem 1
+
+## Data frame
+The code chunk below creates a data frame for problem 1.
+```{r}
+prob1_df = tibble(
+  samp = rnorm(10, mean = 0, sd=1),
+  samp_gt_0 = samp > 0,
+  char_vec = c("a", "b", "c", "d", "e", "f", "g", "h", "j", "i"),
+  factor_vec = factor(c("low", "low", "high", "high", "middle", "middle", "low", "high", "middle", "high"))
+)
+```
