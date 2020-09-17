@@ -14,7 +14,7 @@ library(tidyverse)
 # Problem 1
 
 ## Data frame
-The code chunk below creates a data frame for problem 1.
+**The code chunk below creates a data frame for problem 1.**
 ```{r}
 prob1_df = tibble(
   samp = rnorm(10, mean = 0, sd=1),
@@ -23,3 +23,12 @@ prob1_df = tibble(
   factor_vec = factor(c("low", "low", "high", "high", "middle", "middle", "low", "high", "middle", "high"))
 )
 ```
+
+**Take the mean of each variables**
+```{r}
+mean(pull(prob1_df, samp))
+mean(pull(prob1_df, samp_gt_0))
+mean(pull(prob1_df, char_vec))
+mean(pull(prob1_df, factor_vec))
+```
+It works for numeric and logical vector because logical vector will be automatically regarded as numeric (0,1). But it does not work for character and factor.
