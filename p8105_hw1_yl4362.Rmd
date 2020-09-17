@@ -43,3 +43,11 @@ as.numeric(pull(prob1_df, factor_vec))
 After applying `{r as.numeric}`, results of 'samp', 'samp_gt_0', and 'factor_vec' were successfully converted to numeric values because factor vector is used to refer to a qualitative relationship.  But it does not work for character vector because they are combinations of letters.
 
 It partly explains the results of take the mean attempt, becasue it shows 'samp' can 'samp_gt_0' can be converted to numeric values.
+
+## Convert the logical vector
+**Convert the logical vector to other data types and calculate them**
+```{r}
+as.numeric(pull(prob1_df, samp_gt_0))*pull(prob1_df, samp)
+as.factor(pull(prob1_df, samp_gt_0))*pull(prob1_df, samp)
+as.numeric(as.factor(pull(prob1_df, samp_gt_0)))*pull(prob1_df, samp)
+```
